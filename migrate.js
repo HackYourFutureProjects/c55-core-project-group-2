@@ -20,12 +20,23 @@ function normalizeImportance(rawImportance) {
       return normalized;
     }
   }
-
   if (typeof rawImportance === 'boolean') {
     return rawImportance ? 'high' : 'low';
   }
-
   return 'medium';
+}
+
+function normalizeStatus(rawStatus) {
+  if (typeof rawStatus === 'string') {
+    const normalized = rawStatus.trim().toLowerCase();
+    if (['unfinished', 'finished'].includes(normalized)) {
+      return normalized;
+    }
+  }
+  if (typeof rawStatus === 'boolean') {
+    return rawStatus ? 'finished' : 'unfinished';
+  }
+  return 'unfinished';
 }
 
 let db;
@@ -36,7 +47,7 @@ try {
   db.exec(readFileSync(SCHEMA_FILE, 'utf-8'));
 
   const insertTask = db.prepare(
-    'INSERT INTO tasks (id, name, description, category, importance, status, date_finished, deadline) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+    'INSERT INTO tasks (id, name, description, category, importance, status, date_finished, deadline, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
   );
 
   for (const task of data.tasks) {
@@ -46,9 +57,11 @@ try {
       task.description,
       task.category,
       normalizeImportance(task.importance),
-      task.status,
+      normalizeStatus(task.status),
       task.date_finished,
-      task.deadline
+      task.deadline,
+      task.created_at,
+      task.updated_at
     );
   }
 

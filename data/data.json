@@ -2,33 +2,39 @@
   "tasks": [
     {
       "id": 1,
-      "name": " watring plants",
+      "name": "watering my plants",
       "description": "",
-      "category": " home",
+      "category": "home",
       "importance": "low",
       "status": "unfinished",
       "date_finished": null,
-      "deadline": "2026-12-31"
+      "deadline": "2026-04-15",
+      "created_at": "2026-04-02",
+      "updated_at": "2026-04-09"
     },
     {
       "id": 2,
-      "name": " do homework",
+      "name": "do homework",
       "description": "we have to do homework for math and english",
-      "category": " school",
+      "category": "school",
       "importance": "high",
       "status": "finished",
-      "date_finished": null,
-      "deadline": null
+      "date_finished": "2026-04-10",
+      "deadline": "2026-04-20",
+      "created_at": null,
+      "updated_at": null
     },
     {
       "id": 3,
-      "name": " go to the gym",
+      "name": "go to the gym",
       "description": "i have to go to the gym at least 3 times a week",
-      "category": " health",
+      "category": "health",
       "importance": "medium",
       "status": "unfinished",
       "date_finished": null,
-      "deadline": null
+      "deadline": null,
+      "created_at": "2026-04-09",
+      "updated_at": null
     }
   ]
 }
