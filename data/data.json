@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": " watring plants",
+      "description": "",
+      "category": " home",
+      "importance": "low",
+      "status": "unfinished",
+      "date_finished": null,
+      "deadline": "2026-12-31"
+    },
+    {
+      "id": 2,
+      "name": " do homework",
+      "description": "we have to do homework for math and english",
+      "category": " school",
+      "importance": "high",
+      "status": "finished",
+      "date_finished": null,
+      "deadline": null
+    },
+    {
+      "id": 3,
+      "name": " go to the gym",
+      "description": "i have to go to the gym at least 3 times a week",
+      "category": " health",
+      "importance": "medium",
+      "status": "unfinished",
+      "date_finished": null,
+      "deadline": null
+    }
+  ]
+}
