@@ -1,4 +1,4 @@
-class Task {
+export class Task {
   constructor({
     id = null,
     name,
@@ -44,5 +44,3 @@ class Task {
     }
   }
 }
-
-module.exports = Task;
