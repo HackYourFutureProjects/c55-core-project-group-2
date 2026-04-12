@@ -1,6 +1,10 @@
 /* Import icons */
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
 
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 /* Assign color palette variables */
 :root {
   --bg: #faf4ed;
@@ -24,7 +28,7 @@
 }
 body {
   font-family:
-    'Inter',
+    'Lato',
     system-ui,
     -apple-system,
     'Segoe UI',
@@ -54,6 +58,7 @@ body {
 .app-title {
   color: var(--bg);
   font-size: 36px;
+  font-family: 'Young Serif';
   font-weight: 700;
   letter-spacing: 2px;
 }
