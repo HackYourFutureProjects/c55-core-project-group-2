@@ -1,6 +1,21 @@
 /* Import icons */
 @import 'https://www.nerdfonts.com/assets/css/webfont.css';
 
+/* Assign color palette variables */
+:root {
+  --bg: #faf4ed;
+  --fg: #575279;
+  --bg-alt: #f2e9e1;
+  --fg-alt: #797593;
+  --highlight: #cecacd;
+  --red: #b4637a;
+  --yellow: #ea9d34;
+  --orange: #d7827e;
+  --blue: #286983;
+  --green: #56949f;
+  --purple: #907aa9;
+}
+
 /* Basic reset */
 * {
   box-sizing: border-box;
@@ -15,8 +30,8 @@ body {
     Roboto,
     'Helvetica Neue',
     Arial;
-  background: #fafafa;
-  color: #000;
+  background: var(--bg);
+  color: var(--fg);
   line-height: 1.3;
 }
 
