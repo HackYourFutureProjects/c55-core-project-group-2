@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #fffaf3;
+  padding: 10px;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: #f2e9e1;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 6px;
+  border: 3px solid #797593;
+  box-shadow: 6px 6px 0 0 #797593;
+}
+
+.todo-app h2 {
+  color: #575279;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+  color: #575279;
+  width: 30px;
+  margin-left: 10px;
+}
