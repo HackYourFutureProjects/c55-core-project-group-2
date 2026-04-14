@@ -55,7 +55,7 @@ export function createApp() {
     try {
       const tasks = getAllTasks();
       res.json({ tasks });
-    } catch (error) {
+    } catch {
       res.status(500).json({ error: 'Failed to read tasks data' });
     }
   });
@@ -71,7 +71,7 @@ export function createApp() {
         return res.status(404).json({ error: 'Task not found' });
       }
       res.json({ task });
-    } catch (error) {
+    } catch {
       res.status(500).json({ error: 'Failed to read task' });
     }
   });
@@ -163,7 +163,7 @@ export function createApp() {
         return res.status(404).json({ error: 'Task not found' });
       }
       return res.json({ message: 'Task deleted', task: deletedTask });
-    } catch (error) {
+    } catch {
       return res.status(500).json({ error: 'Failed to delete task' });
     }
   });
