@@ -1,13 +1,11 @@
-import Database from 'better-sqlite3';
+import Database from './database.js';
 import { writeFileSync, existsSync, mkdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DB_FILE = join(__dirname, '../../data/tasks.db');
-const JSON_FILE = join(__dirname, '../../data/data.json');
 
-const db = new Database(DB_FILE);
+const JSON_FILE = join(__dirname, '../../data/data.json');
 
 // normalize values
 function normalizeImportance(value) {
