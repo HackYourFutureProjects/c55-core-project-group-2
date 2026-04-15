@@ -134,3 +134,72 @@ export function deleteTask(id) {
 
   return existing;
 }
+export function getUnfinishedTasks() {
+  return db
+    .prepare(
+      `
+    SELECT * FROM tasks
+    WHERE status = 'unfinished'
+    ORDER BY
+      CASE WHEN deadline IS NULL THEN 1 ELSE 0 END,
+      deadline ASC,
+      id ASC
+  `
+    )
+    .all();
+}
+
+export function getTasksByCategory(category) {
+  return db
+    .prepare(
+      `
+    SELECT * FROM tasks
+    WHERE LOWER(TRIM(category)) = LOWER(TRIM(?))
+    ORDER BY
+      CASE WHEN deadline IS NULL THEN 1 ELSE 0 END,
+      deadline ASC,
+      id ASC
+  `
+    )
+    .all(category);
+}
+
+export function getTodayTasks() {
+  return db
+    .prepare(
+      `
+    SELECT * FROM tasks
+    WHERE deadline IS NOT NULL
+      AND date(deadline) = date('now')
+    ORDER BY deadline ASC, id ASC
+  `
+    )
+    .all();
+}
+
+export function getPastTasks() {
+  return db
+    .prepare(
+      `
+    SELECT * FROM tasks
+    WHERE deadline IS NOT NULL
+      AND date(deadline) < date('now')
+    ORDER BY deadline DESC, id DESC
+  `
+    )
+    .all();
+}
+
+export function getUpcomingTasks(limit = 7) {
+  return db
+    .prepare(
+      `
+    SELECT * FROM tasks
+    WHERE deadline IS NOT NULL
+      AND date(deadline) > date('now')
+    ORDER BY deadline ASC, id ASC
+    LIMIT ?
+  `
+    )
+    .all(limit);
+}
