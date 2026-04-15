@@ -1,3 +1,11 @@
 *.md
 package-lock.json
 node_modules
+package.json
+.prettierrc
+.prettierignore
+eslint.config.js
+eslintignore
+.git
+.gitignore
+.vscode
