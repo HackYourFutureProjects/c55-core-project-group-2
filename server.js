@@ -115,6 +115,7 @@ export function createApp() {
       });
       return res.status(201).json({ task: newTask });
     } catch (error) {
+      console.error('Failed to read tasks data:', error);
       return res
         .status(400)
         .json({ error: error.message || 'Failed to create task' });
@@ -146,6 +147,7 @@ export function createApp() {
       const updatedTask = updateTask(id, req.body);
       return res.json({ task: updatedTask });
     } catch (error) {
+      console.error('Failed to read tasks data:', error);
       return res
         .status(400)
         .json({ error: error.message || 'Failed to update task' });
