@@ -92,7 +92,12 @@ body {
   border: 0px;
   box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.25);
 }
-
+.filter:hover {
+  transform: scale(1.02);
+}
+.filter::selection {
+  transform: translateY(-2px);
+}
 /* Tasks area card */
 .tasks-area {
   background: var(--bg-alt);
