@@ -81,7 +81,7 @@ body {
   padding: 8px 20px;
   border-radius: 4px;
   background: var(--bg-alt);
-  border: 2px solid var(--highlight);
+  border: 1px solid var(--highlight);
   cursor: pointer;
   color: var(--fg);
   font-weight: 600;
@@ -98,6 +98,49 @@ body {
 .filter::selection {
   transform: translateY(-2px);
 }
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-alt);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.input-bar:hover {
+  outline: 2px solid var(--red); /* highlight color */
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.input-bar:focus-within {
+  outline: 2px solid var(--red); /* highlight color */
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#new-task-input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+#new-task-btn {
+  border: none;
+  outline: none;
+  padding: 14px 30px;
+  background: var(--red);
+  color: var(--bg);
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  filter: brightness(0.95);
+}
+
 /* Tasks area card */
 .tasks-area {
   background: var(--bg-alt);
