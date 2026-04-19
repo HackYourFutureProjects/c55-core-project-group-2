@@ -52,4 +52,37 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+// Create tasks
+const input = document.getElementById('new-task-input');
+const addButton = document.getElementById('new-task-btn');
+
+async function addTask() {
+  const name = input.value.trim();
+  if (!name) return;
+
+  const response = await fetch('/tasks', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name,
+      category: 'general',
+      importance: 'medium',
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    alert(`Could not add task: ${error.error}`);
+    return;
+  }
+
+  input.value = '';
+  await loadTasks();
+}
+
+addButton.addEventListener('click', addTask);
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') addTask();
+});
+
 loadTasks();
