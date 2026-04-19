@@ -1,11 +1,3 @@
-/* 
-## this comment can be deleted after adding the html/css server later ##
-
-- the server now runs on port 3000 and serves the API routes under /tasks.
-- the root route (/) currently returns a JSON message but can be changed to serve an HTML file for the frontend.
-- i added short comments in the right spots of the server setup so you can later plug in static CSS and HTML serving
-  without changing route logic.
-*/
 import express from 'express';
 import {
   createTask,
@@ -15,6 +7,9 @@ import {
   updateTask,
 } from './src/data-access/taskRepository.js';
 import { Task } from './src/models/Task.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function isValidIsoDate(dateString) {
   if (typeof dateString !== 'string') {
@@ -45,7 +40,7 @@ export function createApp() {
   const app = express();
   // Keep JSON middleware for API requests.
   app.use(express.json());
-  // Frontend hook: add express.static(...) here when you want to serve CSS/JS files.
+  app.use(express.static(path.join(__dirname, 'public')));
   app.get('/', (req, res) => {
     // Frontend hook: replace this JSON response with res.sendFile(...) for index.html.
     res.json({ message: 'Task API is running' });
