@@ -101,11 +101,42 @@ body {
 
 .input-bar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   background: var(--bg-alt);
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.input-bar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-bar-extras {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-top: 1px solid var(--highlight);
+}
+
+#new-task-desc {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: var(--fg-alt);
+}
+
+#new-task-importance {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--fg-alt);
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .input-bar:hover {
@@ -260,6 +291,11 @@ button:hover {
 }
 .task-title {
   font-weight: 600;
+}
+.task-desc {
+  font-size: 13px;
+  color: var(--fg-alt);
+  margin-top: 2px;
 }
 .task-due {
   font-size: 13px;

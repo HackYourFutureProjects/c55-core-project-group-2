@@ -23,12 +23,26 @@
       </nav>
 
       <div class="input-bar">
-        <input
-          id="new-task-input"
-          type="text"
-          placeholder="What would you like to do today?"
-        />
-        <button id="new-task-btn" type="button">Enter ↵</button>
+        <div class="input-bar-main">
+          <input
+            id="new-task-input"
+            type="text"
+            placeholder="What would you like to do today?"
+          />
+          <button id="new-task-btn" type="button">Enter ↵</button>
+        </div>
+        <div class="input-bar-extras">
+          <input
+            id="new-task-desc"
+            type="text"
+            placeholder="Description (optional)"
+          />
+          <select id="new-task-importance">
+            <option value="medium">Medium priority</option>
+            <option value="low">Low priority</option>
+            <option value="high">High priority</option>
+          </select>
+        </div>
       </div>
 
       <section class="tasks-area">

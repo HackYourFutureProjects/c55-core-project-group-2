@@ -29,6 +29,7 @@ function createTaskElement(task) {
       <input type="checkbox" ${task.status === 'finished' ? 'checked' : ''} />
       <div class="task-meta">
         <div class="task-title">${escapeHtml(task.name)}</div>
+        ${task.description ? `<div class="task-desc">${escapeHtml(task.description)}</div>` : ''}
         <div class="task-due">${task.deadline ? `Due: ${task.deadline}` : ''}</div>
       </div>
     </div>
@@ -79,6 +80,8 @@ function escapeHtml(str) {
 
 // Create tasks
 const input = document.getElementById('new-task-input');
+const descInput = document.getElementById('new-task-desc');
+const importanceSelect = document.getElementById('new-task-importance');
 const addButton = document.getElementById('new-task-btn');
 
 async function addTask() {
@@ -90,8 +93,9 @@ async function addTask() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       name,
+      description: descInput.value.trim(),
       category: 'general',
-      importance: 'medium',
+      importance: importanceSelect.value,
     }),
   });
 
@@ -102,6 +106,8 @@ async function addTask() {
   }
 
   input.value = '';
+  descInput.value = '';
+  importanceSelect.value = 'medium';
   await loadTasks();
 }
 
