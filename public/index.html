@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script type="module" src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-overlay">
+        <h1 class="app-title">Todo App</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <nav class="filters" aria-label="task filters">
+        <button class="filter active">Inbox</button>
+        <button class="filter">Unfinished</button>
+        <button class="filter">Completed</button>
+      </nav>
+
+      <div class="input-bar">
+        <div class="input-bar-main">
+          <input
+            id="new-task-input"
+            type="text"
+            placeholder="What would you like to do today?"
+          />
+          <button id="new-task-btn" type="button">Enter ↵</button>
+        </div>
+        <div class="input-bar-extras">
+          <input
+            id="new-task-desc"
+            type="text"
+            placeholder="Description (optional)"
+          />
+          <select id="new-task-importance">
+            <option value="medium">Medium priority</option>
+            <option value="low">Low priority</option>
+            <option value="high">High priority</option>
+          </select>
+        </div>
+      </div>
+
+      <section class="tasks-area">
+        <div class="tasks-header">
+          <h2>Tasks</h2>
+        </div>
+
+        <ul class="task-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
