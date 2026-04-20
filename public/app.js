@@ -34,11 +34,36 @@ function createTaskElement(task) {
     </div>
     <div class="task-right">
       <button class="icon delete" title="delete">
-        <i class="nf nf-fa-trash"></i>
+        <i class="nf nf-fa-trash_can"></i>
       </button>
       <span class="priority ${task.importance}"></span>
     </div>
   `;
+
+  li.querySelector('input[type="checkbox"]').addEventListener(
+    'change',
+    async (e) => {
+      const status = e.target.checked ? 'finished' : 'unfinished';
+      const response = await fetch(`/tasks/${task.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+      if (!response.ok) {
+        e.target.checked = !e.target.checked;
+        alert('Could not update task status');
+      }
+    }
+  );
+
+  li.querySelector('.delete').addEventListener('click', async () => {
+    const response = await fetch(`/tasks/${task.id}`, { method: 'DELETE' });
+    if (response.ok) {
+      await loadTasks();
+    } else {
+      alert('Could not delete task');
+    }
+  });
 
   return li;
 }
