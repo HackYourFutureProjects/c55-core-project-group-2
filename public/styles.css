@@ -3,7 +3,7 @@
 
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 
 /* Assign color palette variables */
 :root {
@@ -28,7 +28,7 @@
 }
 body {
   font-family:
-    'Lato',
+    'Poppins',
     system-ui,
     -apple-system,
     'Segoe UI',
@@ -46,21 +46,31 @@ body {
   background-image: url('assets/banner.png');
   background-size: cover;
   background-position: center;
-  border-bottom: 6px solid;
+  border-bottom: 4px solid var(--orange);
 }
 .hero-overlay {
+  position: relative;
   height: 100%;
   background: rgba(0, 0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.hero-logo {
+  position: absolute;
+  left: 24px;
+  top: 0px;
+  height: 256px;
+  width: auto;
+}
 .app-title {
-  color: var(--fg);
+  color: #232136;
   font-size: 48px;
-  font-family: 'Lato';
-  font-weight: 14000;
+  font-family: 'Poppins';
+  font-weight: 900;
   letter-spacing: 2px;
+  -webkit-text-stroke: 2px var(--bg);
 }
 
 /* Main container */
@@ -87,7 +97,7 @@ body {
   font-weight: 600;
 }
 .filter.active {
-  background: var(--red);
+  background: var(--green);
   color: var(--bg);
   border: 0px;
   box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.25);
@@ -140,12 +150,12 @@ body {
 }
 
 .input-bar:hover {
-  outline: 2px solid var(--red); /* highlight color */
+  outline: 2px solid var(--green); /* highlight color */
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .input-bar:focus-within {
-  outline: 2px solid var(--red); /* highlight color */
+  outline: 2px solid var(--green); /* highlight color */
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -161,7 +171,7 @@ body {
   border: none;
   outline: none;
   padding: 14px 30px;
-  background: var(--red);
+  background: var(--green);
   color: var(--bg);
   font-size: 14px;
   cursor: pointer;
