@@ -43,23 +43,23 @@ body {
 /* Header with background image and centered title */
 .hero {
   height: 120px;
-  background-image: url('https://images.unsplash.com/vector-1761412852752-614d8df2ab1c?q=80&w=1695&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('assets/banner.png');
   background-size: cover;
   background-position: center;
   border-bottom: 6px solid;
 }
 .hero-overlay {
   height: 100%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .app-title {
-  color: var(--bg);
-  font-size: 36px;
-  font-family: 'Young Serif';
-  font-weight: 700;
+  color: var(--fg);
+  font-size: 48px;
+  font-family: 'Lato';
+  font-weight: 14000;
   letter-spacing: 2px;
 }
 
