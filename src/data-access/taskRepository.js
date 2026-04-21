@@ -1,11 +1,4 @@
 import db from './database.js';
-import { writeFileSync, existsSync, mkdirSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-const JSON_FILE = join(__dirname, '../../data/data.json');
 
 // normalize values
 function normalizeImportance(value) {
@@ -37,18 +30,6 @@ function validate(task) {
   if (!task.category || task.category.trim() === '') {
     throw new Error('Task category is required');
   }
-}
-
-// sync DB → JSON
-function writeTasksToJson() {
-  const tasks = getAllTasks();
-  const dir = dirname(JSON_FILE);
-
-  if (!existsSync(dir)) {
-    mkdirSync(dir, { recursive: true });
-  }
-
-  writeFileSync(JSON_FILE, JSON.stringify({ tasks }, null, 2), 'utf-8');
 }
 
 // --- CRUD ---
@@ -87,7 +68,6 @@ export function createTask(data) {
     );
 
   const created = getTaskById(result.lastInsertRowid);
-  writeTasksToJson();
   return created;
 }
 
@@ -121,7 +101,6 @@ export function updateTask(id, updates) {
   );
 
   const updated = getTaskById(id);
-  writeTasksToJson();
   return updated;
 }
 
@@ -130,7 +109,6 @@ export function deleteTask(id) {
   if (!existing) return null;
 
   db.prepare('DELETE FROM tasks WHERE id = ?').run(id);
-  writeTasksToJson();
 
   return existing;
 }
