@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo App</title>
+    <title>Check Mate - HackYourFuture Group 2 Project</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script type="module" src="app.js" defer></script>
@@ -11,15 +11,16 @@
   <body>
     <header class="hero">
       <div class="hero-overlay">
-        <h1 class="app-title">Todo App</h1>
+        <img class="hero-logo" src="assets/favicon.png" alt="Check Mate logo" />
+        <h1 class="app-title">Check Mate</h1>
       </div>
     </header>
 
     <main class="container">
       <nav class="filters" aria-label="task filters">
-        <button class="filter active">Inbox</button>
-        <button class="filter">Unfinished</button>
-        <button class="filter">Completed</button>
+        <button class="filter active" data-filter="all">Inbox</button>
+        <button class="filter" data-filter="unfinished">Unfinished</button>
+        <button class="filter" data-filter="finished">Completed</button>
       </nav>
 
       <div class="input-bar">

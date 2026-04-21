@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "name": "secund task from Postman",
+      "name": "Second task from Postman",
       "description": "testing api",
       "category": "General",
       "importance": "high",
@@ -22,11 +22,11 @@
       "date_finished": "2026-04-14T16:29:21.967Z",
       "deadline": "2026-12-31",
       "created_at": "2026-04-14 16:29:21",
-      "updated_at": "2026-04-14 16:29:21"
+      "updated_at": "2026-04-21 14:44:52"
     },
     {
       "id": 3,
-      "name": "third task from Postman",
+      "name": "Third task from Postman",
       "description": "testing api",
       "category": "General",
       "importance": "low",
@@ -34,7 +34,7 @@
       "date_finished": null,
       "deadline": "2026-12-31",
       "created_at": "2026-04-14 16:29:42",
-      "updated_at": "2026-04-14 16:30:56"
+      "updated_at": "2026-04-21 14:44:57"
     },
     {
       "id": 8,
@@ -42,11 +42,11 @@
       "description": null,
       "category": "general",
       "importance": "medium",
-      "status": "finished",
-      "date_finished": "2026-04-20T10:23:57.900Z",
+      "status": "unfinished",
+      "date_finished": null,
       "deadline": null,
       "created_at": "2026-04-20 10:19:42",
-      "updated_at": "2026-04-20 10:23:57"
+      "updated_at": "2026-04-20 11:13:28"
     },
     {
       "id": 9,
