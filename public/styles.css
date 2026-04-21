@@ -312,6 +312,57 @@ button:hover {
   margin-top: 4px;
 }
 
+/* Edit mode */
+.task.editing {
+  display: block;
+  padding: 14px;
+}
+.task-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.edit-name,
+.edit-desc,
+.edit-importance {
+  padding: 8px 10px;
+  border: 1px solid var(--highlight);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+.edit-name:focus,
+.edit-desc:focus,
+.edit-importance:focus {
+  border-color: var(--green);
+}
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+.edit-save {
+  background: var(--green);
+  color: var(--bg);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.edit-cancel {
+  background: transparent;
+  border: 1px solid var(--highlight);
+  color: var(--fg-alt);
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 /* Right side controls */
 .task-right {
   display: flex;
