@@ -54,7 +54,7 @@ function createTaskElement(task) {
     </div>
     <div class="task-right">
       <button class="icon edit" title="edit">
-        <i class="nf nf-fa-pencil"></i>
+        <i class="nf nf-oct-pencil"></i>
       </button>
       <button class="icon delete" title="delete">
         <i class="nf nf-fa-trash_can"></i>

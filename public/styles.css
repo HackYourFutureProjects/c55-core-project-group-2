@@ -376,6 +376,14 @@ button:hover {
   font-size: 14px;
   color: var(--fg-alt);
 }
+.task .icon {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.task:hover .icon,
+.task:focus-within .icon {
+  opacity: 1;
+}
 
 /* Priority dots */
 .priority {
