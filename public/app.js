@@ -79,7 +79,9 @@ function createTaskElement(task) {
       if (!response.ok) {
         e.target.checked = !e.target.checked;
         alert('Could not update task status');
+        return;
       }
+      await loadTasks();
     }
   );
 

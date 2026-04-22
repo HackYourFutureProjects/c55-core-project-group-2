@@ -291,8 +291,37 @@ button:hover {
   align-items: center;
 }
 .task-left input[type='checkbox'] {
-  width: 18px;
-  height: 18px;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  background: var(--bg);
+  cursor: pointer;
+  position: relative;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+  flex-shrink: 0;
+}
+.task-left input[type='checkbox']:hover {
+  border-color: var(--green);
+}
+.task-left input[type='checkbox']:checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+.task-left input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--bg);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 .task-meta {
   display: flex;
